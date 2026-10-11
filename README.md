@@ -1,3 +1,4 @@
+[![CI](https://github.com/srnomula06/agent-reliability-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/srnomula06/agent-reliability-harness/actions)
 # agentbench — Agent Reliability & Evaluation Harness
 
 A framework that runs LLM agents on tool-use tasks, **injects failures** (tool errors, timeouts,

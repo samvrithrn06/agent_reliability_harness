@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        cache: 'pip'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Install the package in editable mode with development flags
+        if [ -f pyproject.toml ]; then pip install -e ".[dev]"; fi
+
+    - name: Run verification unit tests
+      run: |
+        # Executes your 15 core deterministic harness verification tests
+        python3 -m unittest discover -s tests
+
+    - name: Execute benchmark smoke test
+      run: |
+        # Quick sanity matrix run to check system stability and report engines
+        python3 -m agentbench run --designs naive,guarded --conditions clean --max-tasks 2 --seeds 1
