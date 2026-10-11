@@ -20,3 +20,5 @@ class Tracer:
                 v = v[:MAX_TEXT]
             ev[k] = v
         self.events.append(ev)
+
+# Telemetry tracking and diagnostics
