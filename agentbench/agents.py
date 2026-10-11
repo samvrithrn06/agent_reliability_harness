@@ -167,3 +167,5 @@ class ToolUseAgent:
                 "tokens_in": tin, "tokens_out": tout, "delivered_faults": delivered,
                 "gate_blocks": gate_blocks, "latency_s": round(self.latency + 0.2 * rt.calls, 2),
                 "verifier_rejections": rejections, "repairs": repairs}
+
+# ReAct agent profiles and guardrails
