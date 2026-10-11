@@ -1,4 +1,4 @@
-[![CI](https://github.com/samvrithrn06/agent-reliability-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/samvrithrn06/agent-reliability-harness/actions)
+[![CI](https://github.com/samvrithrn06/agent_reliability_harness/actions/workflows/ci.yml/badge.svg)](https://github.com/samvrithrn06/agent_reliability_harness/actions)
 # agentbench — Agent Reliability & Evaluation Harness
 
 A framework that runs LLM agents on tool-use tasks, **injects failures** (tool errors, timeouts,
