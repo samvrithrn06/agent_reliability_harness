@@ -253,3 +253,5 @@ def make_llm(backend: str, task: Task, seed: int, profile: ModelProfile | None =
     if backend == "anthropic":
         return AnthropicLLM()
     raise ValueError(f"unknown backend {backend}")
+
+# Core backend models and evaluation tasks
