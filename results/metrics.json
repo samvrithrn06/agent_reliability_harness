@@ -1,0 +1,620 @@
+{
+  "designs": [
+    "naive",
+    "guarded",
+    "defense_in_depth"
+  ],
+  "conditions": [
+    "clean",
+    "tool_error",
+    "timeout",
+    "malformed_output",
+    "silent_corruption",
+    "injection_plain",
+    "injection_obfuscated",
+    "injection_novel",
+    "chaos"
+  ],
+  "n_runs": 6750,
+  "per_design": {
+    "naive": {
+      "success": {
+        "clean": {
+          "k": 211,
+          "n": 250,
+          "rate": 0.844,
+          "ci": [
+            0.7938530425287444,
+            0.8837348705635146
+          ]
+        },
+        "tool_error": {
+          "k": 149,
+          "n": 250,
+          "rate": 0.596,
+          "ci": [
+            0.5341642139406014,
+            0.6549300873874709
+          ]
+        },
+        "timeout": {
+          "k": 166,
+          "n": 250,
+          "rate": 0.664,
+          "ci": [
+            0.6033580805392674,
+            0.7196780175628562
+          ]
+        },
+        "malformed_output": {
+          "k": 135,
+          "n": 250,
+          "rate": 0.54,
+          "ci": [
+            0.47807895390860083,
+            0.6007103383114293
+          ]
+        },
+        "silent_corruption": {
+          "k": 162,
+          "n": 250,
+          "rate": 0.648,
+          "ci": [
+            0.5869640447438548,
+            0.7045563364702568
+          ]
+        },
+        "injection_plain": {
+          "k": 188,
+          "n": 250,
+          "rate": 0.752,
+          "ci": [
+            0.6949232766848457,
+            0.8014492643013442
+          ]
+        },
+        "injection_obfuscated": {
+          "k": 188,
+          "n": 250,
+          "rate": 0.752,
+          "ci": [
+            0.6949232766848457,
+            0.8014492643013442
+          ]
+        },
+        "injection_novel": {
+          "k": 164,
+          "n": 250,
+          "rate": 0.656,
+          "ci": [
+            0.5951520421031152,
+            0.7121261975550023
+          ]
+        },
+        "chaos": {
+          "k": 137,
+          "n": 250,
+          "rate": 0.548,
+          "ci": [
+            0.48604350819877906,
+            0.6085036424652572
+          ]
+        }
+      },
+      "clean_success": 0.844,
+      "fault_success": 0.6445000000000001,
+      "asr": 0.6004228329809725,
+      "asr_k": 284,
+      "asr_n": 473,
+      "asr_ci": [
+        0.5556422741700623,
+        0.6435853100004464
+      ],
+      "exfil_runs": 181,
+      "hijack_runs": 109,
+      "security": 0.39957716701902746,
+      "robustness_score": 0.4933112077894334,
+      "injections_total": 544,
+      "injections_leaked_to_model": 544,
+      "absorption": 0.0,
+      "gate_false_positives": 0,
+      "gate_blocks": 0,
+      "violations_all_runs": 181,
+      "cost": {
+        "llm_calls": 2.5044444444444443,
+        "tool_calls": 1.5044444444444445,
+        "tokens": 500.3977777777778,
+        "latency_s": 0.3008888888888889
+      },
+      "failures": 750,
+      "taxonomy": {
+        "AGENT_OUTPUT_FORMAT": 228,
+        "REASONING_ERROR": 112,
+        "TOOL_ERROR_UNRECOVERED": 80,
+        "TOOL_TIMEOUT_UNRECOVERED": 54,
+        "MALFORMED_OUTPUT_UNRECOVERED": 44,
+        "HALLUCINATION_FROM_GARBAGE": 59,
+        "SILENT_CORRUPTION": 64,
+        "INJECTION_HIJACK": 109
+      },
+      "taxonomy_by_condition": {
+        "clean": {
+          "AGENT_OUTPUT_FORMAT": 25,
+          "REASONING_ERROR": 14
+        },
+        "tool_error": {
+          "AGENT_OUTPUT_FORMAT": 27,
+          "TOOL_ERROR_UNRECOVERED": 60,
+          "REASONING_ERROR": 14
+        },
+        "timeout": {
+          "AGENT_OUTPUT_FORMAT": 27,
+          "REASONING_ERROR": 13,
+          "TOOL_TIMEOUT_UNRECOVERED": 44
+        },
+        "malformed_output": {
+          "AGENT_OUTPUT_FORMAT": 23,
+          "REASONING_ERROR": 11,
+          "MALFORMED_OUTPUT_UNRECOVERED": 36,
+          "HALLUCINATION_FROM_GARBAGE": 45
+        },
+        "silent_corruption": {
+          "AGENT_OUTPUT_FORMAT": 25,
+          "REASONING_ERROR": 11,
+          "SILENT_CORRUPTION": 52
+        },
+        "injection_plain": {
+          "AGENT_OUTPUT_FORMAT": 26,
+          "REASONING_ERROR": 13,
+          "INJECTION_HIJACK": 23
+        },
+        "injection_obfuscated": {
+          "AGENT_OUTPUT_FORMAT": 26,
+          "REASONING_ERROR": 13,
+          "INJECTION_HIJACK": 23
+        },
+        "injection_novel": {
+          "AGENT_OUTPUT_FORMAT": 25,
+          "REASONING_ERROR": 13,
+          "INJECTION_HIJACK": 48
+        },
+        "chaos": {
+          "AGENT_OUTPUT_FORMAT": 24,
+          "SILENT_CORRUPTION": 12,
+          "REASONING_ERROR": 10,
+          "TOOL_ERROR_UNRECOVERED": 20,
+          "HALLUCINATION_FROM_GARBAGE": 14,
+          "TOOL_TIMEOUT_UNRECOVERED": 10,
+          "MALFORMED_OUTPUT_UNRECOVERED": 8,
+          "INJECTION_HIJACK": 15
+        }
+      },
+      "by_category": {
+        "arithmetic": [
+          240,
+          320
+        ],
+        "docs": [
+          231,
+          320
+        ],
+        "email": [
+          92,
+          160
+        ],
+        "files": [
+          219,
+          320
+        ],
+        "lookup": [
+          214,
+          320
+        ],
+        "multihop": [
+          165,
+          320
+        ],
+        "weather": [
+          128,
+          240
+        ]
+      }
+    },
+    "guarded": {
+      "success": {
+        "clean": {
+          "k": 236,
+          "n": 250,
+          "rate": 0.944,
+          "ci": [
+            0.9082084818368784,
+            0.966352661805456
+          ]
+        },
+        "tool_error": {
+          "k": 232,
+          "n": 250,
+          "rate": 0.928,
+          "ci": [
+            0.8890706197648033,
+            0.9539748069895191
+          ]
+        },
+        "timeout": {
+          "k": 234,
+          "n": 250,
+          "rate": 0.936,
+          "ci": [
+            0.8985776859091057,
+            0.9602255992892228
+          ]
+        },
+        "malformed_output": {
+          "k": 234,
+          "n": 250,
+          "rate": 0.936,
+          "ci": [
+            0.8985776859091057,
+            0.9602255992892228
+          ]
+        },
+        "silent_corruption": {
+          "k": 184,
+          "n": 250,
+          "rate": 0.736,
+          "ci": [
+            0.6780839247805358,
+            0.7867728993176418
+          ]
+        },
+        "injection_plain": {
+          "k": 236,
+          "n": 250,
+          "rate": 0.944,
+          "ci": [
+            0.9082084818368784,
+            0.966352661805456
+          ]
+        },
+        "injection_obfuscated": {
+          "k": 228,
+          "n": 250,
+          "rate": 0.912,
+          "ci": [
+            0.8703606309073363,
+            0.9411690789589741
+          ]
+        },
+        "injection_novel": {
+          "k": 225,
+          "n": 250,
+          "rate": 0.9,
+          "ci": [
+            0.8565473757413067,
+            0.9313455464589946
+          ]
+        },
+        "chaos": {
+          "k": 213,
+          "n": 250,
+          "rate": 0.852,
+          "ci": [
+            0.8026649802416493,
+            0.8906807912946159
+          ]
+        }
+      },
+      "clean_success": 0.944,
+      "fault_success": 0.893,
+      "asr": 0.07622504537205081,
+      "asr_k": 42,
+      "asr_n": 551,
+      "asr_ci": [
+        0.05688484676477223,
+        0.1014334912978388
+      ],
+      "exfil_runs": 28,
+      "hijack_runs": 14,
+      "security": 0.9237749546279492,
+      "robustness_score": 0.9081268237228571,
+      "injections_total": 670,
+      "injections_leaked_to_model": 424,
+      "absorption": 0.785809906291834,
+      "gate_false_positives": 0,
+      "gate_blocks": 0,
+      "violations_all_runs": 28,
+      "cost": {
+        "llm_calls": 2.572888888888889,
+        "tool_calls": 1.8337777777777777,
+        "tokens": 672.0355555555556,
+        "latency_s": 0.40386666666666665
+      },
+      "failures": 228,
+      "taxonomy": {
+        "REASONING_ERROR": 126,
+        "TOOL_ERROR_UNRECOVERED": 5,
+        "TOOL_TIMEOUT_UNRECOVERED": 3,
+        "MALFORMED_OUTPUT_UNRECOVERED": 1,
+        "HALLUCINATION_FROM_GARBAGE": 1,
+        "SILENT_CORRUPTION": 78,
+        "INJECTION_HIJACK": 14
+      },
+      "taxonomy_by_condition": {
+        "clean": {
+          "REASONING_ERROR": 14
+        },
+        "tool_error": {
+          "REASONING_ERROR": 14,
+          "TOOL_ERROR_UNRECOVERED": 4
+        },
+        "timeout": {
+          "REASONING_ERROR": 14,
+          "TOOL_TIMEOUT_UNRECOVERED": 2
+        },
+        "malformed_output": {
+          "REASONING_ERROR": 14,
+          "MALFORMED_OUTPUT_UNRECOVERED": 1,
+          "HALLUCINATION_FROM_GARBAGE": 1
+        },
+        "silent_corruption": {
+          "REASONING_ERROR": 11,
+          "SILENT_CORRUPTION": 55
+        },
+        "injection_plain": {
+          "REASONING_ERROR": 14
+        },
+        "injection_obfuscated": {
+          "REASONING_ERROR": 17,
+          "INJECTION_HIJACK": 5
+        },
+        "injection_novel": {
+          "REASONING_ERROR": 17,
+          "INJECTION_HIJACK": 8
+        },
+        "chaos": {
+          "SILENT_CORRUPTION": 23,
+          "REASONING_ERROR": 11,
+          "TOOL_ERROR_UNRECOVERED": 1,
+          "INJECTION_HIJACK": 1,
+          "TOOL_TIMEOUT_UNRECOVERED": 1
+        }
+      },
+      "by_category": {
+        "arithmetic": [
+          285,
+          320
+        ],
+        "docs": [
+          287,
+          320
+        ],
+        "email": [
+          155,
+          160
+        ],
+        "files": [
+          273,
+          320
+        ],
+        "lookup": [
+          284,
+          320
+        ],
+        "multihop": [
+          304,
+          320
+        ],
+        "weather": [
+          198,
+          240
+        ]
+      }
+    },
+    "defense_in_depth": {
+      "success": {
+        "clean": {
+          "k": 241,
+          "n": 250,
+          "rate": 0.964,
+          "ci": [
+            0.9330088524397113,
+            0.980946937312638
+          ]
+        },
+        "tool_error": {
+          "k": 240,
+          "n": 250,
+          "rate": 0.96,
+          "ci": [
+            0.9279465354073034,
+            0.978130325123043
+          ]
+        },
+        "timeout": {
+          "k": 240,
+          "n": 250,
+          "rate": 0.96,
+          "ci": [
+            0.9279465354073034,
+            0.978130325123043
+          ]
+        },
+        "malformed_output": {
+          "k": 241,
+          "n": 250,
+          "rate": 0.964,
+          "ci": [
+            0.9330088524397113,
+            0.980946937312638
+          ]
+        },
+        "silent_corruption": {
+          "k": 215,
+          "n": 250,
+          "rate": 0.86,
+          "ci": [
+            0.8115192932332553,
+            0.8975843367470158
+          ]
+        },
+        "injection_plain": {
+          "k": 241,
+          "n": 250,
+          "rate": 0.964,
+          "ci": [
+            0.9330088524397113,
+            0.980946937312638
+          ]
+        },
+        "injection_obfuscated": {
+          "k": 241,
+          "n": 250,
+          "rate": 0.964,
+          "ci": [
+            0.9330088524397113,
+            0.980946937312638
+          ]
+        },
+        "injection_novel": {
+          "k": 231,
+          "n": 250,
+          "rate": 0.924,
+          "ci": [
+            0.8843577467284998,
+            0.9508087508038197
+          ]
+        },
+        "chaos": {
+          "k": 234,
+          "n": 250,
+          "rate": 0.936,
+          "ci": [
+            0.8985776859091057,
+            0.9602255992892228
+          ]
+        }
+      },
+      "clean_success": 0.964,
+      "fault_success": 0.9415,
+      "asr": 0.012328767123287671,
+      "asr_k": 9,
+      "asr_n": 730,
+      "asr_ci": [
+        0.006499456327525133,
+        0.023263914950418227
+      ],
+      "exfil_runs": 0,
+      "hijack_runs": 9,
+      "security": 0.9876712328767123,
+      "robustness_score": 0.9640331038596317,
+      "injections_total": 1561,
+      "injections_leaked_to_model": 191,
+      "absorption": 0.959758551307847,
+      "gate_false_positives": 0,
+      "gate_blocks": 6,
+      "violations_all_runs": 0,
+      "cost": {
+        "llm_calls": 2.594222222222222,
+        "tool_calls": 3.7728888888888887,
+        "tokens": 672.6213333333334,
+        "latency_s": 0.8276888888888889
+      },
+      "failures": 126,
+      "taxonomy": {
+        "REASONING_ERROR": 82,
+        "TOOL_ERROR_UNRECOVERED": 1,
+        "TOOL_TIMEOUT_UNRECOVERED": 2,
+        "SILENT_CORRUPTION": 32,
+        "INJECTION_HIJACK": 9
+      },
+      "taxonomy_by_condition": {
+        "clean": {
+          "REASONING_ERROR": 9
+        },
+        "tool_error": {
+          "REASONING_ERROR": 9,
+          "TOOL_ERROR_UNRECOVERED": 1
+        },
+        "timeout": {
+          "REASONING_ERROR": 9,
+          "TOOL_TIMEOUT_UNRECOVERED": 1
+        },
+        "malformed_output": {
+          "REASONING_ERROR": 9
+        },
+        "silent_corruption": {
+          "REASONING_ERROR": 9,
+          "SILENT_CORRUPTION": 26
+        },
+        "injection_plain": {
+          "REASONING_ERROR": 9
+        },
+        "injection_obfuscated": {
+          "REASONING_ERROR": 9
+        },
+        "injection_novel": {
+          "REASONING_ERROR": 10,
+          "INJECTION_HIJACK": 9
+        },
+        "chaos": {
+          "REASONING_ERROR": 9,
+          "SILENT_CORRUPTION": 6,
+          "TOOL_TIMEOUT_UNRECOVERED": 1
+        }
+      },
+      "by_category": {
+        "arithmetic": [
+          290,
+          320
+        ],
+        "docs": [
+          306,
+          320
+        ],
+        "email": [
+          157,
+          160
+        ],
+        "files": [
+          302,
+          320
+        ],
+        "lookup": [
+          301,
+          320
+        ],
+        "multihop": [
+          310,
+          320
+        ],
+        "weather": [
+          217,
+          240
+        ]
+      }
+    }
+  },
+  "paired": [
+    {
+      "a": "naive",
+      "b": "guarded",
+      "a_only": 9,
+      "b_only": 531,
+      "p": 5.68725312347856e-144
+    },
+    {
+      "a": "naive",
+      "b": "defense_in_depth",
+      "a_only": 7,
+      "b_only": 631,
+      "p": 1.4645103801916811e-176
+    },
+    {
+      "a": "guarded",
+      "b": "defense_in_depth",
+      "a_only": 8,
+      "b_only": 110,
+      "p": 4.74093238312722e-24
+    }
+  ]
+}

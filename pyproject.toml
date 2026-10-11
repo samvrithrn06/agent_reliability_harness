@@ -1,0 +1,16 @@
+[project]
+name = "agentbench"
+version = "0.1.0"
+description = "Reliability & robustness evaluation harness for tool-using LLM agents (fault + prompt-injection testing, tracing, failure taxonomy)."
+requires-python = ">=3.10"
+dependencies = []                      # stdlib only
+
+[project.optional-dependencies]
+plots = ["matplotlib"]
+live  = ["anthropic"]
+
+[project.scripts]
+agentbench = "agentbench.__main__:main"
+
+[tool.setuptools]
+packages = ["agentbench"]
