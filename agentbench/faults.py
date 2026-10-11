@@ -156,3 +156,5 @@ class FaultInjector:
             faults.append({"type": "injection", "payload": key,
                            "kind": key.split("_")[0], "style": style, **meta})
         return ToolResult(dumps(res), faults)
+
+# Adversarial fault injection engine
